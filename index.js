@@ -12,9 +12,7 @@ app.engine('mustache', mustacheExpress());
 
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views');
-
-
-
+app.use(express.static('public'));
 
 app.get('/', function (req, res) {
   let obj =  [{}];
@@ -27,7 +25,8 @@ app.get('/', function (req, res) {
     `;
     if (data.users[i].job) {
       markup += `
-        <p>${data.users[i].job}</p>
+        <p>${data.users[i].job},<br />
+        ${data.users[i].company}</p>
         </div>
       `;
     } else {
