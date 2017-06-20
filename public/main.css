@@ -8,11 +8,31 @@
 }
 
 .userMain {
-  
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 250px 50px 1fr;
+  line-height: 150%;
+  align-items: flex-end;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 200;
+  margin-bottom: 40px;
 }
 
 h2 {
   color: DodgerBlue;
+}
+
+h3 {
+  font-size: 1rem;
+  text-align: right;
+  margin-right: 20px;
+  margin-bottom: 0;
+  align-self: flex-end;
+
 }
 
 a {
@@ -36,4 +56,19 @@ a {
 
 .unemp {
   color: red;
+}
+
+.userMain img {
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  align-self: flex-end;
+  margin: auto 20px 0 auto;
+}
+
+.contact {
+  align-self: flex-end;
+}
+
+.skill-list {
+  grid-column: 2;
 }
