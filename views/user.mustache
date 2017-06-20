@@ -56,13 +56,11 @@
             Skills
           </h3>
         {{#skills}}
-          <ul>
-            {{#.}}
-              <li>
-                {{.}}
-              </li>
-            {{/.}}
-          </ul>
+          <div class="skill-list">
+              {{#.}}
+                  {{.}}<br />
+              {{/.}}
+          </div>
         {{/skills}}
 
     </main>
