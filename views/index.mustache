@@ -6,7 +6,28 @@
     <title>Users</title>
   </head>
   <body>
-      <!-- content should appear here. -->
-      {{{markup}}}
+    <main class="usersMain">
+      {{#users}}
+        <a href={{id}}>
+          <div class="robot">
+            <img src={{avatar}} />
+            <h2>
+              {{username}}
+            </h2>
+            {{#job}}
+              <p>
+                {{job}}<br />
+                {{company}}
+              </p>
+            {{/job}}
+            {{^job}}
+              <p class="unemp">
+                Available for hire
+              </p>
+            {{/job}}
+          </div>
+        </a>
+      {{/users}}
+    </main>
   </body>
 </html>
