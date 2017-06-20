@@ -10,24 +10,60 @@
       <main class=userMain>
 
         <img src="{{avatar}}">
-        <h1>{{name}}</h1>
-        <p>
-          {{#address.city}}
-            {{address.city}},
-          {{/address.city}}
-          {{#address.country}}
-           {{address.country}} |
-          {{/address.country}}
-          {{#job}}
-           {{job}}, {{company}}
-          {{/job}}
-          {{^job}}
-            <span class="unemp">
-              Available for hire
-            </span>
-          {{/job}}
-         </p>
-      </main>
+
+
+        <section class="contact">
+          <h1>{{name}}</h1>
+          <p>
+            {{#address.city}}
+              {{address.city}},
+            {{/address.city}}
+            {{#address.country}}
+              {{address.country}} |
+            {{/address.country}}
+            {{#job}}
+              {{job}}, {{company}}
+            {{/job}}
+            {{^job}}
+              <span class="unemp">
+                Available for hire
+              </span>
+            {{/job}}
+            <br />
+            {{#email}}
+              {{email}} |
+            {{/email}}
+            {{#phone}}
+              {{phone}}
+            {{/phone}}
+          </p>
+        </section>
+
+
+        {{#university}}
+          <h3>
+            Education
+          </h3>
+
+          <span>
+            {{university}}
+          </span>
+        {{/university}}
+
+
+
+          <h3>
+            Skills
+          </h3>
+        {{#skills}}
+          <div class="skill-list">
+              {{#.}}
+                  {{.}}<br />
+              {{/.}}
+          </div>
+        {{/skills}}
+
+    </main>
 
   </body>
 </html>
