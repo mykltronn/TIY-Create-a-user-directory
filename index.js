@@ -19,7 +19,7 @@ app.get('/', function (req, res) {
   let markup = ``;
   for (var i = 0; i < data.users.length; i++) {
     markup += `
-      <div class="robot">
+      <a href="${i}"><div class="robot">
         <img src="${data.users[i].avatar}" />
         <h2>${data.users[i].username}</h2>
     `;
@@ -27,18 +27,22 @@ app.get('/', function (req, res) {
       markup += `
         <p>${data.users[i].job},<br />
         ${data.users[i].company}</p>
-        </div>
+        </div></a>
       `;
     } else {
       markup += `
         <p class="unemp">Available for hire</p>
-        </div>
+        </div></a>
       `
     }
   }
   obj['markup'] = markup;
 
   res.render('index.mustache', obj);
+})
+
+app.get('/:index', function (req, res) {
+  
 })
 
 app.listen(3000, function () {
